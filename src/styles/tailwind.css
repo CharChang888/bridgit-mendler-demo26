@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Handjet', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+@keyframes starsDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2%, 1.25%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.92) rotate(-2deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.06) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+[data-twinkle] {
+  animation-name: starTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rocketBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+[data-rocket-bob] {
+  animation: rocketBob 3.5s ease-in-out infinite;
+}
+
+@keyframes buttonTwinkle {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+  }
+  50% {
+    opacity: 0.92;
+    box-shadow: 0 0 24px rgba(16, 185, 129, 0.55);
+  }
+}
+
+[data-hell-yes-twinkle] {
+  animation: buttonTwinkle 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-twinkle],
+  [data-stars-drift],
+  [data-rocket-bob],
+  [data-hell-yes-twinkle] {
+    animation: none !important;
+  }
+}
+
