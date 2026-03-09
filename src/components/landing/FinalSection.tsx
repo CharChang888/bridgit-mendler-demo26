@@ -1,5 +1,5 @@
 import headshotImg from '../../assets/images/bridgitmendlerheadshot.jpg'
-import launchImg from '../../assets/images/LAUNCHF25.jpg'
+import launchImg from '../../assets/images/LAUNCHF25.JPG'
 import troylabsLogoImg from '../../assets/images/troylabsLogo.svg'
 import StarsBackground from './StarsBackground'
 
