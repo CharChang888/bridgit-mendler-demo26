@@ -49,9 +49,7 @@ export default function FinalSection() {
 
         {/* Button */}
         <a
-          href="https://doorlist.app/e/ddeSyII?s=thJ5tXmVfM"
-          target="_blank"
-          rel="noreferrer"
+          href="mailto:ctchang@usc.edu?subject=Bridgit%20Mendler%20Coming%20to%20DEMO26!"
           className="mt-8 inline-block rounded-xl border-2 border-amber-700/80 bg-amber-800 px-8 py-3.5 text-lg font-semibold tracking-wide text-slate-100 transition-colors hover:border-amber-600 hover:bg-amber-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/80"
         >
           let&apos;s do it!
@@ -69,18 +67,20 @@ export default function FinalSection() {
           />
         </a>
         <a
-          href="mailto:ctchang@usc.edu?subject=Bridgit%20Mendler%20Coming%20to%20DEMO26!"
+          href="https://doorlist.app/e/ddeSyII?s=thJ5tXmVfM"
+          target="_blank"
+          rel="noreferrer"
           className="rounded p-1.5 text-slate-400 transition-colors hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60"
-          aria-label="Contact"
+          aria-label="RSVP on Doorlist"
         >
-          <EnvelopeIcon className="h-6 w-6 sm:h-7 sm:w-7" />
+          <WebsiteIcon className="h-6 w-6 sm:h-7 sm:w-7" />
         </a>
       </footer>
     </section>
   )
 }
 
-function EnvelopeIcon({ className }: { className?: string }) {
+function WebsiteIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +92,10 @@ function EnvelopeIcon({ className }: { className?: string }) {
       strokeLinejoin="round"
       className={className}
     >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3a12.6 12.6 0 0 1 3 9 12.6 12.6 0 0 1-3 9" />
+      <path d="M12 3a12.6 12.6 0 0 0-3 9 12.6 12.6 0 0 0 3 9" />
     </svg>
   )
 }
