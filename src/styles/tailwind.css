@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -14,6 +15,10 @@ body {
   margin: 0;
   font-family: 'Handjet', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
 }
 
 @keyframes starsDrift {
@@ -64,11 +69,11 @@ body {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
   }
   50% {
-    opacity: 0.92;
-    box-shadow: 0 0 24px rgba(16, 185, 129, 0.55);
+    opacity: 0.95;
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.7);
   }
 }
 

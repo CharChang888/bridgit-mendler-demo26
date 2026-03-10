@@ -69,19 +69,19 @@ export default function ScrollScene() {
         id: 'headline',
         text: 'From Hurricane to Northwood Space,',
         className:
-          'top-[12vh] left-1/2 -translate-x-1/2 text-center text-3xl sm:text-5xl font-semibold tracking-wide text-slate-100',
+          'top-[12vh] left-1/2 -translate-x-1/2 w-full max-w-[60vw] sm:max-w-xl text-center text-3xl sm:text-5xl font-semibold tracking-wide text-slate-100',
       },
       {
         id: 'sub1',
         text: "inspiring TroyLabs founders to shoot for the stars.",
         className:
-          'top-[24vh] left-[8vw] max-w-xl text-3xl sm:text-5xl tracking-wide text-slate-200/90',
+          'top-[24vh] left-[8vw] right-[55vw] sm:left-[10vw] sm:right-[52vw] max-w-[48vw] sm:max-w-[360px] md:max-w-[420px] text-3xl sm:text-5xl tracking-wide text-slate-200/90',
       },
       {
         id: 'sub2',
         text: 'An invitation for Bridgit Mendler to speak at DEMO 2026.',
         className:
-          'top-[64vh] left-[8vw] max-w-xl text-3xl sm:text-5xl tracking-wide text-slate-200/90',
+          'top-[64vh] left-[8vw] right-[55vw] sm:left-[10vw] sm:right-[52vw] max-w-[48vw] sm:max-w-[360px] md:max-w-[420px] text-3xl sm:text-5xl tracking-wide text-slate-200/90',
       },
     ],
     [],
@@ -191,7 +191,7 @@ export default function ScrollScene() {
       <StarsBackground />
 
       {/* Story text */}
-      <div className="absolute inset-0 z-[3]">
+      <div className="absolute inset-0 z-[3] px-5 sm:px-6">
         {story.map((s) => {
           const isHeadline = s.id === 'headline'
           return (

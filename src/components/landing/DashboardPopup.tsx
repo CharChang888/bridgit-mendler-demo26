@@ -52,21 +52,21 @@ export default function DashboardPopup({ open, onClose }: DashboardPopupProps) {
 
       {/* Satellite dashboard panel */}
       <div
-        className={`relative max-h-[85vh] w-full max-w-lg overflow-hidden rounded-lg border-2 border-emerald-500/40 bg-slate-900/95 shadow-[0_0_40px_rgba(0,255,200,0.08),inset_0_0_60px_rgba(0,0,0,0.4)] transition-transform duration-300 ${
+        className={`relative max-h-[85vh] w-full max-w-lg overflow-hidden rounded-lg border-2 border-amber-700/80 bg-slate-900/95 shadow-[0_0_40px_rgba(180,83,9,0.08),inset_0_0_60px_rgba(0,0,0,0.4)] transition-transform duration-300 ${
           visible ? 'scale-100' : 'scale-95'
         }`}
         style={{
           boxShadow:
-            '0 0 0 1px rgba(16, 185, 129, 0.2), 0 0 40px rgba(0,255,200,0.06), inset 0 0 80px rgba(0,0,0,0.5)',
+            '0 0 0 1px rgba(180, 83, 9, 0.25), 0 0 40px rgba(180, 83, 9, 0.06), inset 0 0 80px rgba(0,0,0,0.5)',
         }}
       >
         {/* Dashboard header bar */}
-        <div className="flex items-center justify-between border-b border-emerald-500/30 bg-slate-800/80 px-4 py-2.5">
+        <div className="flex items-center justify-between border-b border-amber-700/60 bg-slate-800/80 px-4 py-2.5">
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+            <span className="h-2 w-2 rounded-full bg-amber-400/80" />
             <span
               id="dashboard-title"
-              className="text-xs font-semibold uppercase tracking-widest text-emerald-300/90"
+              className="text-xs font-semibold uppercase tracking-widest text-amber-200/90"
             >
               Incoming transmission
             </span>
@@ -74,7 +74,7 @@ export default function DashboardPopup({ open, onClose }: DashboardPopupProps) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded border border-slate-500/50 bg-slate-700/50 px-2 py-1 text-xs text-slate-300 hover:bg-slate-600/60 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+            className="rounded border border-slate-500/50 bg-slate-700/50 px-2 py-1 text-xs text-slate-300 hover:bg-slate-600/60 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-600/60"
           >
             Close
           </button>
@@ -85,13 +85,13 @@ export default function DashboardPopup({ open, onClose }: DashboardPopupProps) {
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
             background:
-              'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,200,0.15) 2px, rgba(0,255,200,0.15) 4px)',
+              'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(245,158,11,0.15) 2px, rgba(245,158,11,0.15) 4px)',
           }}
         />
 
         {/* Message body */}
         <div className="relative max-h-[calc(85vh-52px)] overflow-y-auto p-5">
-          <p className="whitespace-pre-line text-sm leading-relaxed text-slate-200/95 sm:text-base">
+          <p className="font-poppins whitespace-pre-line text-sm leading-relaxed text-slate-200/95 sm:text-base">
             {MESSAGE}
           </p>
         </div>

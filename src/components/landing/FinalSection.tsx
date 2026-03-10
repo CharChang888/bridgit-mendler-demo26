@@ -12,7 +12,7 @@ export default function FinalSection() {
       <StarsBackground />
 
       {/* Main content: two frames + CTA + button, centered */}
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col items-center justify-center px-4 py-24 pt-32">
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col items-center justify-center px-5 py-24 pt-32 sm:px-6">
         {/* Two image frames side by side */}
         <div className="flex w-full max-w-4xl flex-col items-center justify-center gap-6 sm:flex-row sm:items-center sm:gap-8">
           {/* Left: Bridgit headshot — smaller frame */}
@@ -42,7 +42,7 @@ export default function FinalSection() {
         {/* CTA text */}
         <p
           id="final-cta"
-          className="mt-12 max-w-2xl text-center text-lg font-medium leading-relaxed text-slate-200 sm:text-xl md:text-2xl"
+          className="font-poppins mt-12 max-w-2xl text-center text-lg font-medium leading-relaxed text-slate-200 sm:text-xl md:text-2xl"
         >
           Bridgit, will you return to your alma mater and join us as our Keynote Speaker for DEMO 26?
         </p>
@@ -59,7 +59,7 @@ export default function FinalSection() {
       </div>
 
       {/* Footer: TROYLABS left, envelope right */}
-      <footer className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4">
+      <footer className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-4 sm:px-6">
         <img
           src={troylabsLogoImg}
           alt="TroyLabs"

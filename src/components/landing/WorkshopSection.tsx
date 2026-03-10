@@ -206,31 +206,32 @@ export default function WorkshopSection() {
       className="relative min-h-dvh w-full overflow-hidden bg-[linear-gradient(to_bottom,#020617,#020617_40%,#020617_60%,#000000_100%)]"
       aria-labelledby="workshop-headline"
     >
-      {/* Headline top-left */}
-      <div
-        id="workshop-headline"
-        className="absolute left-[8vw] top-[8vh] z-10 max-w-md text-slate-100"
-      >
-        <h2 className="text-2xl font-semibold tracking-wide sm:text-3xl md:text-4xl">
-          Bridgit x TroyLabs
-        </h2>
-        <p className="mt-1 text-xl font-medium tracking-wide text-slate-200/95 sm:text-2xl md:text-3xl">
-          Startup Building Workshop
-        </p>
-        <p className="mt-2 text-sm italic font-semibold tracking-wide text-amber-200/90 sm:text-base md:text-lg">
-          reasons why we&apos;d love for YOU to speak at DEMO
-        </p>
-      </div>
+      <div className="flex min-h-dvh flex-col md:relative">
+        {/* Headline: stacked on mobile, absolute top-left on md+ */}
+        <div
+          id="workshop-headline"
+          className="relative z-10 px-4 pt-6 pb-2 text-slate-100 md:absolute md:left-[8vw] md:top-[8vh] md:max-w-md md:px-0 md:pt-0 md:pb-0 sm:px-0"
+        >
+          <h2 className="text-2xl font-semibold tracking-wide sm:text-3xl md:text-4xl">
+            Bridgit x TroyLabs
+          </h2>
+          <p className="mt-1 text-xl font-medium tracking-wide text-slate-200/95 sm:text-2xl md:text-3xl">
+            Startup Building Workshop
+          </p>
+          <p className="mt-2 text-sm italic font-semibold tracking-wide text-amber-200/90 sm:text-base md:text-lg">
+            reasons why we&apos;d love for YOU to speak at DEMO
+          </p>
+        </div>
 
-      {/* Left: 2x2 parts grid + assemble button */}
-      <div className="absolute left-[5vw] top-[26vh] z-10 flex flex-col items-center gap-4 md:left-[6vw]">
-        <div className="grid w-[38vw] min-w-[200px] max-w-[420px] grid-cols-2 gap-2 sm:gap-4">
+        {/* Parts grid + assemble: stacked on mobile, absolute left on md+ */}
+        <div className="relative z-10 flex flex-col items-center gap-4 px-4 py-4 md:absolute md:left-[6vw] md:top-[26vh] md:px-0 md:py-0">
+          <div className="grid w-[38vw] min-w-[200px] max-w-[420px] grid-cols-2 gap-2 sm:gap-4 [touch-action:manipulation]">
           {PARTS.map((part, index) => (
           <button
             type="button"
             key={part.alt}
             onClick={() => setSelectedIndex((prev) => (prev === index ? null : index))}
-            className={`flex aspect-square items-center justify-center overflow-hidden rounded-lg border-2 bg-slate-900/60 p-2 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/80 ${
+            className={`flex min-h-[44px] min-w-[44px] aspect-square items-center justify-center overflow-hidden rounded-lg border-2 bg-slate-900/60 p-2 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/80 active:scale-100 ${
               selectedIndex === index
                 ? 'border-amber-800/80 hover:border-amber-700 hover:bg-slate-800/50'
                 : 'border-slate-600/30 hover:border-slate-500/60 hover:bg-slate-800/70'
@@ -254,14 +255,14 @@ export default function WorkshopSection() {
         >
           Assemble rocket
         </button>
-      </div>
+        </div>
 
-      {/* Right half: assembled rocket centered in the right 50%, base above Earth strip */}
-      <div
-        ref={rocketRef}
-        className="absolute bottom-[28vh] left-1/2 right-0 top-[12vh] z-10 flex items-end justify-center overflow-visible"
-        {...(!isLaunching ? { 'data-rocket-bob': true } : {})}
-      >
+        {/* Rocket: stacked on mobile, absolute right half on md+ */}
+        <div
+          ref={rocketRef}
+          className="relative z-10 flex min-h-[280px] items-end justify-center overflow-visible py-4 md:absolute md:bottom-[28vh] md:left-1/2 md:right-0 md:top-[12vh] md:min-h-0 md:py-0"
+          {...(!isLaunching ? { 'data-rocket-bob': true } : {})}
+        >
         <img
           src={
             assembled
@@ -271,33 +272,34 @@ export default function WorkshopSection() {
                 : greyrocketImg
           }
           alt="Assembled rocket"
-          className={`h-full max-h-[95vh] w-auto object-contain object-bottom transition-transform duration-200 ${
+          className={`h-full max-h-[95vh] w-auto max-w-[90vw] object-contain object-bottom transition-transform duration-200 sm:max-w-none ${
             assembled || selectedIndex !== null
-              ? 'min-w-[420px] scale-110 sm:min-w-[520px] md:min-w-[640px]'
-              : 'min-w-[380px] sm:min-w-[480px] md:min-w-[600px]'
+              ? 'min-w-0 scale-110 sm:min-w-[520px] md:min-w-[640px]'
+              : 'min-w-0 sm:min-w-[480px] md:min-w-[600px]'
           }`}
           draggable={false}
         />
-      </div>
+        </div>
 
-      {selectedIndex !== null && !panelHidden ? (
-        <div className="absolute bottom-[22vh] left-1/2 right-0 z-20 flex justify-center px-4">
+        {/* Dashboard: in flow on mobile (below rocket), absolute on md+ */}
+        {selectedIndex !== null && !panelHidden ? (
+          <div className="relative z-20 flex justify-center px-4 py-4 md:absolute md:bottom-[12vh] md:left-1/2 md:right-0 md:py-0">
           <div
             ref={panelRef}
-            className="relative w-full max-w-md overflow-hidden rounded-lg border-2 border-emerald-500/40 bg-slate-900/95 shadow-[0_0_40px_rgba(0,255,200,0.08),inset_0_0_60px_rgba(0,0,0,0.4)]"
+            className="relative w-full max-w-md overflow-hidden rounded-lg border-2 border-amber-700/80 bg-slate-900/95 shadow-[0_0_40px_rgba(180,83,9,0.08),inset_0_0_60px_rgba(0,0,0,0.4)]"
             style={{
               boxShadow:
-                '0 0 0 1px rgba(16, 185, 129, 0.2), 0 0 40px rgba(0,255,200,0.06), inset 0 0 80px rgba(0,0,0,0.5)',
+                '0 0 0 1px rgba(180, 83, 9, 0.25), 0 0 40px rgba(180, 83, 9, 0.06), inset 0 0 80px rgba(0,0,0,0.5)',
             }}
           >
-            <div className="flex items-center justify-between border-b border-emerald-500/30 bg-slate-800/80 px-4 py-2.5">
+            <div className="flex items-center justify-between border-b border-amber-700/60 bg-slate-800/80 px-4 py-2.5">
               <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300/90">
+                <span className="h-2 w-2 rounded-full bg-amber-400/80" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-amber-200/90">
                   Workshop dashboard
                 </span>
               </div>
-              <span className="text-[11px] font-semibold tracking-widest text-emerald-200/70">
+              <span className="text-[11px] font-semibold tracking-widest text-amber-200/70">
                 {PARTS[selectedIndex]?.alt}
               </span>
             </div>
@@ -306,18 +308,19 @@ export default function WorkshopSection() {
               className="pointer-events-none absolute inset-0 opacity-[0.03]"
               style={{
                 background:
-                  'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,200,0.15) 2px, rgba(0,255,200,0.15) 4px)',
+                  'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(180,83,9,0.15) 2px, rgba(180,83,9,0.15) 4px)',
               }}
             />
 
-            <div className="relative p-5">
-              <p className="text-sm leading-relaxed text-slate-200/95 sm:text-base">
+            <div className="relative px-4 py-5 sm:px-5">
+              <p className="font-poppins text-sm leading-relaxed text-slate-200/95 sm:text-base">
                 {PART_COPY[selectedIndex]}
               </p>
             </div>
           </div>
         </div>
-      ) : null}
+        ) : null}
+      </div>
 
       {overlayRect ? (
         <div
