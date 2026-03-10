@@ -60,12 +60,14 @@ export default function FinalSection() {
 
       {/* Footer: TROYLABS left, envelope right */}
       <footer className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-4 sm:px-6">
-        <img
-          src={troylabsLogoImg}
-          alt="TroyLabs"
-          className="h-6 w-auto opacity-90 drop-shadow-[0_10px_28px_rgba(0,0,0,0.55)] sm:h-7"
-          draggable={false}
-        />
+        <a href="https://www.troylabs.vc/" target="_blank" rel="noreferrer" aria-label="TroyLabs website">
+          <img
+            src={troylabsLogoImg}
+            alt="TroyLabs"
+            className="h-6 w-auto opacity-90 drop-shadow-[0_10px_28px_rgba(0,0,0,0.55)] sm:h-7"
+            draggable={false}
+          />
+        </a>
         <a
           href="mailto:ctchang@usc.edu?subject=Bridgit%20Mendler%20Coming%20to%20DEMO26!"
           className="rounded p-1.5 text-slate-400 transition-colors hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60"
